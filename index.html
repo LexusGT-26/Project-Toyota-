@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toyota Fleet Management System</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo-section">
+          <i class="fas fa-car"></i>
+          <h1>Toyota Fleet Management</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="#">Vehicles</a></li>
+            <li><a href="#">Maintenance</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </nav>
+        <div class="user-section">
+          <span>Welcome, Admin</span>
+          <div class="user-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-header">
+      <div class="container">
+        <h2>Vehicle Monitoring Dashboard</h2>
+        <div class="stats-overview">
+          <div class="stat-card">
+            <div class="stat-icon ok">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-number">1</span>
+              <span class="stat-label">Operational</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon alert">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-number">1</span>
+              <span class="stat-label">Needs Attention</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon critical">
+              <i class="fas fa-times-circle"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Critical</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon other">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-number">1</span>
+              <span class="stat-label">Maintenance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container">
+      <div class="filters-section">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search vehicles..."
+          />
+        </div>
+        <div class="filter-controls">
+          <select id="status-filter">
+            <option value="all">All Statuses</option>
+            <option value="OK">Operational</option>
+            <option value="Alert">Needs Attention</option>
+            <option value="Critical">Critical</option>
+            <option value="Parts not available">Maintenance</option>
+          </select>
+          <select id="sort-by">
+            <option value="name">Sort by Name</option>
+            <option value="year">Sort by Year</option>
+            <option value="status">Sort by Status</option>
+            <option value="mileage">Sort by Mileage</option>
+          </select>
+        </div>
+      </div>
+
+      <section id="vehicle-list">
+        <!-- Vehicle cards will be injected here by JS -->
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Toyota Fleet Management</h3>
+            <p>
+              Comprehensive vehicle monitoring and maintenance tracking system
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <p><i class="fas fa-phone"></i> +1 (800) TOYOTA</p>
+            <p><i class="fas fa-envelope"></i> fleet@toyota.com</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Toyota Motor Corporation. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
