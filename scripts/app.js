@@ -64,8 +64,7 @@ const vehicles = [
     fuelType: "Gasoline",
     location: "California, USA",
     nextService: 0,
-    image:
-      "https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2023/corolla/1H4.png",
+    image: "images/Toyota Vios.jpg",
   },
 ];
 
