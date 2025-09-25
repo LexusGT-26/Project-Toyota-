@@ -10,8 +10,7 @@ const vehicles = [
     fuelType: "Diesel",
     location: "Toyota Cubao",
     nextService: 5000,
-    image:
-      "https://www.toyota.com/imgix/responsive/images/mlp/colorizer/2024/landcruiser/1L5.png",
+    image: "images/Toyota Land Cruiser.jpg",
   },
   {
     id: 2,
