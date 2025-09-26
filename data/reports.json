@@ -1,0 +1,50 @@
+{
+  "fleetSummary": {
+    "totalVehicles": 25,
+    "activeVehicles": 18,
+    "utilizationRate": 72,
+    "totalMileage": 1250000,
+    "averageFuelConsumption": 10.5,
+    "maintenanceCost": 125000,
+    "fuelCost": 450000
+  },
+  "monthlyReports": [
+    {
+      "month": "January 2025",
+      "vehiclesOperational": 22,
+      "maintenanceCost": 12500,
+      "fuelCost": 38500,
+      "downtimeHours": 48,
+      "incidents": 2
+    },
+    {
+      "month": "December 2024",
+      "vehiclesOperational": 24,
+      "maintenanceCost": 9800,
+      "fuelCost": 41200,
+      "downtimeHours": 24,
+      "incidents": 1
+    }
+  ],
+  "vehicleReports": [
+    {
+      "vehicleId": 1,
+      "vehicleName": "Toyota Land Cruiser",
+      "monthlyMileage": 2500,
+      "fuelConsumption": 212.5,
+      "maintenanceCost": 5000,
+      "downtime": 0,
+      "efficiencyScore": 95
+    },
+    {
+      "vehicleId": 2,
+      "vehicleName": "Toyota Haice",
+      "monthlyMileage": 4500,
+      "fuelConsumption": 360,
+      "maintenanceCost": 3000,
+      "downtime": 8,
+      "efficiencyScore": 88
+    }
+  ],
+  "exportFormats": ["PDF", "Excel", "CSV"]
+}

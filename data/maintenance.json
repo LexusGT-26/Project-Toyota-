@@ -1,0 +1,70 @@
+{
+  "scheduled": [
+    {
+      "id": 1,
+      "vehicleId": 1,
+      "vehicleName": "Toyota Land Cruiser",
+      "type": "Regular Maintenance",
+      "scheduledDate": "2025-02-01",
+      "dueDate": "2025-02-15",
+      "status": "scheduled",
+      "priority": "medium",
+      "estimatedCost": 15000,
+      "serviceItems": [
+        "Oil change",
+        "Filter replacement",
+        "Brake inspection",
+        "Tire rotation"
+      ]
+    },
+    {
+      "id": 2,
+      "vehicleId": 2,
+      "vehicleName": "Toyota Haice",
+      "type": "Brake System Check",
+      "scheduledDate": "2025-01-20",
+      "dueDate": "2025-01-25",
+      "status": "urgent",
+      "priority": "high",
+      "estimatedCost": 8000,
+      "serviceItems": [
+        "Brake pad replacement",
+        "Brake fluid flush",
+        "Rotor inspection"
+      ]
+    }
+  ],
+  "history": [
+    {
+      "id": 101,
+      "vehicleId": 1,
+      "vehicleName": "Toyota Land Cruiser",
+      "type": "Oil Change",
+      "completedDate": "2025-01-10",
+      "cost": 5000,
+      "technician": "Rodrigo Mendoza",
+      "serviceCenter": "Toyota Cubao",
+      "mileage": 14500,
+      "details": "Synthetic oil change and filter replacement"
+    },
+    {
+      "id": 102,
+      "vehicleId": 3,
+      "vehicleName": "Toyota Hilux",
+      "type": "Tire Replacement",
+      "completedDate": "2024-12-15",
+      "cost": 25000,
+      "technician": "Elena Rodriguez",
+      "serviceCenter": "Toyota Manila Bay",
+      "mileage": 48500,
+      "details": "All-terrain tire replacement and alignment"
+    }
+  ],
+  "serviceTypes": [
+    { "id": 1, "name": "Regular Maintenance", "interval": 10000 },
+    { "id": 2, "name": "Oil Change", "interval": 5000 },
+    { "id": 3, "name": "Tire Service", "interval": 15000 },
+    { "id": 4, "name": "Brake Service", "interval": 20000 },
+    { "id": 5, "name": "Engine Tune-up", "interval": 30000 }
+  ]
+}

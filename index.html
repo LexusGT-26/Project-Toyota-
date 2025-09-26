@@ -19,11 +19,25 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#" class="active">Dashboard</a></li>
-            <li><a href="#">Vehicles</a></li>
-            <li><a href="#">Maintenance</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Settings</a></li>
+            <li>
+              <a href="#" class="nav-link active" data-page="dashboard"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-page="vehicles">Vehicles</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-page="maintenance"
+                >Maintenance</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-page="reports">Reports</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-page="settings">Settings</a>
+            </li>
           </ul>
         </nav>
         <div class="user-section">
@@ -35,81 +49,250 @@
       </div>
     </header>
 
-    <div class="dashboard-header">
-      <div class="container">
-        <h2>Vehicle Monitoring Dashboard</h2>
-        <div class="stats-overview">
-          <div class="stat-card">
-            <div class="stat-icon ok">
-              <i class="fas fa-check-circle"></i>
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="page active">
+      <div class="dashboard-header">
+        <div class="container">
+          <h2>Vehicle Monitoring Dashboard</h2>
+          <div class="stats-overview">
+            <div class="stat-card">
+              <div class="stat-icon ok">
+                <i class="fas fa-car"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-number" id="total-vehicles">0</span>
+                <span class="stat-label">Total Vehicles</span>
+              </div>
             </div>
-            <div class="stat-info">
-              <span class="stat-number">1</span>
-              <span class="stat-label">Operational</span>
+            <div class="stat-card">
+              <div class="stat-icon alert">
+                <i class="fas fa-road"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-number" id="active-vehicles">0</span>
+                <span class="stat-label">Active Vehicles</span>
+              </div>
             </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon alert">
-              <i class="fas fa-exclamation-triangle"></i>
+            <div class="stat-card">
+              <div class="stat-icon critical">
+                <i class="fas fa-tools"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-number" id="maintenance-vehicles">0</span>
+                <span class="stat-label">In Maintenance</span>
+              </div>
             </div>
-            <div class="stat-info">
-              <span class="stat-number">1</span>
-              <span class="stat-label">Needs Attention</span>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon critical">
-              <i class="fas fa-times-circle"></i>
-            </div>
-            <div class="stat-info">
-              <span class="stat-number">2</span>
-              <span class="stat-label">Critical</span>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon other">
-              <i class="fas fa-tools"></i>
-            </div>
-            <div class="stat-info">
-              <span class="stat-number">1</span>
-              <span class="stat-label">Maintenance</span>
+            <div class="stat-card">
+              <div class="stat-icon other">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-number" id="utilization-rate">0%</span>
+                <span class="stat-label">Utilization Rate</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <main class="container">
+        <div class="dashboard-content">
+          <div class="dashboard-grid">
+            <div class="dashboard-card recent-activity">
+              <h3><i class="fas fa-clock"></i> Recent Activity</h3>
+              <div id="recent-activity-list" class="activity-list">
+                <!-- Activity items will be loaded here -->
+              </div>
+            </div>
+
+            <div class="dashboard-card alerts">
+              <h3><i class="fas fa-exclamation-triangle"></i> Alerts</h3>
+              <div id="alerts-list" class="alerts-list">
+                <!-- Alert items will be loaded here -->
+              </div>
+            </div>
+
+            <div class="dashboard-card quick-stats">
+              <h3><i class="fas fa-chart-pie"></i> Quick Stats</h3>
+              <div class="stats-grid">
+                <div class="mini-stat">
+                  <span class="mini-stat-value" id="total-mileage">0</span>
+                  <span class="mini-stat-label">Total Mileage</span>
+                </div>
+                <div class="mini-stat">
+                  <span class="mini-stat-value" id="fuel-consumption">0</span>
+                  <span class="mini-stat-label">Fuel Consumption (L)</span>
+                </div>
+                <div class="mini-stat">
+                  <span class="mini-stat-value" id="co2-saved">0</span>
+                  <span class="mini-stat-label">CO2 Saved (kg)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
 
-    <main class="container">
-      <div class="filters-section">
-        <div class="search-box">
-          <i class="fas fa-search"></i>
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Search vehicles..."
-          />
-        </div>
-        <div class="filter-controls">
-          <select id="status-filter">
-            <option value="all">All Statuses</option>
-            <option value="OK">Operational</option>
-            <option value="Alert">Needs Attention</option>
-            <option value="Critical">Critical</option>
-            <option value="Parts not available">Maintenance</option>
-          </select>
-          <select id="sort-by">
-            <option value="name">Sort by Name</option>
-            <option value="year">Sort by Year</option>
-            <option value="status">Sort by Status</option>
-            <option value="mileage">Sort by Mileage</option>
-          </select>
+    <!-- Vehicles Page -->
+    <div id="vehicles-page" class="page">
+      <div class="page-header">
+        <div class="container">
+          <h2>Vehicle Management</h2>
+          <p>Manage and monitor your fleet vehicles</p>
         </div>
       </div>
 
-      <section id="vehicle-list">
-        <!-- Vehicle cards will be injected here by JS -->
-      </section>
-    </main>
+      <main class="container">
+        <div class="filters-section">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="vehicle-search"
+              placeholder="Search vehicles..."
+            />
+          </div>
+          <div class="filter-controls">
+            <select id="vehicle-status-filter">
+              <option value="all">All Statuses</option>
+              <option value="OK">Operational</option>
+              <option value="Alert">Needs Attention</option>
+              <option value="Critical">Critical</option>
+              <option value="Parts not available">Maintenance</option>
+            </select>
+            <select id="vehicle-sort">
+              <option value="name">Sort by Name</option>
+              <option value="year">Sort by Year</option>
+              <option value="status">Sort by Status</option>
+              <option value="mileage">Sort by Mileage</option>
+            </select>
+            <button class="btn btn-primary" id="add-vehicle-btn">
+              <i class="fas fa-plus"></i> Add Vehicle
+            </button>
+          </div>
+        </div>
+
+        <section id="vehicle-list" class="vehicle-grid">
+          <!-- Vehicle cards will be injected here by JS -->
+        </section>
+      </main>
+    </div>
+
+    <!-- Maintenance Page -->
+    <div id="maintenance-page" class="page">
+      <div class="page-header">
+        <div class="container">
+          <h2>Maintenance Management</h2>
+          <p>Schedule and track vehicle maintenance</p>
+        </div>
+      </div>
+
+      <main class="container">
+        <div class="maintenance-tabs">
+          <button class="tab-btn active" data-tab="scheduled">Scheduled</button>
+          <button class="tab-btn" data-tab="history">History</button>
+          <button class="tab-btn" data-tab="service-types">
+            Service Types
+          </button>
+        </div>
+
+        <div id="scheduled-tab" class="tab-content active">
+          <div class="maintenance-list" id="scheduled-maintenance">
+            <!-- Scheduled maintenance items -->
+          </div>
+        </div>
+
+        <div id="history-tab" class="tab-content">
+          <div class="maintenance-list" id="maintenance-history">
+            <!-- Maintenance history items -->
+          </div>
+        </div>
+
+        <div id="service-types-tab" class="tab-content">
+          <div class="service-types-list" id="service-types">
+            <!-- Service types items -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Reports Page -->
+    <div id="reports-page" class="page">
+      <div class="page-header">
+        <div class="container">
+          <h2>Reports & Analytics</h2>
+          <p>Generate and view fleet reports</p>
+        </div>
+      </div>
+
+      <main class="container">
+        <div class="reports-controls">
+          <div class="report-filters">
+            <select id="report-type">
+              <option value="fleet-summary">Fleet Summary</option>
+              <option value="monthly">Monthly Report</option>
+              <option value="vehicle">Vehicle Report</option>
+            </select>
+            <select id="report-period">
+              <option value="current">Current Month</option>
+              <option value="last">Last Month</option>
+              <option value="quarter">This Quarter</option>
+              <option value="year">This Year</option>
+            </select>
+            <button class="btn btn-primary" id="generate-report">
+              <i class="fas fa-download"></i> Generate Report
+            </button>
+          </div>
+        </div>
+
+        <div class="reports-content">
+          <div id="fleet-summary-report" class="report-section active">
+            <!-- Fleet summary report content -->
+          </div>
+          <div id="monthly-report" class="report-section">
+            <!-- Monthly report content -->
+          </div>
+          <div id="vehicle-report" class="report-section">
+            <!-- Vehicle report content -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Settings Page -->
+    <div id="settings-page" class="page">
+      <div class="page-header">
+        <div class="container">
+          <h2>Settings</h2>
+          <p>Manage system preferences and users</p>
+        </div>
+      </div>
+
+      <main class="container">
+        <div class="settings-tabs">
+          <button class="tab-btn active" data-tab="preferences">
+            Preferences
+          </button>
+          <button class="tab-btn" data-tab="fleet-settings">
+            Fleet Settings
+          </button>
+          <button class="tab-btn" data-tab="users">Users</button>
+        </div>
+
+        <div id="preferences-tab" class="tab-content active">
+          <!-- User preferences form -->
+        </div>
+
+        <div id="fleet-settings-tab" class="tab-content">
+          <!-- Fleet settings form -->
+        </div>
+
+        <div id="users-tab" class="tab-content">
+          <!-- Users management -->
+        </div>
+      </main>
+    </div>
 
     <footer>
       <div class="container">
@@ -139,6 +322,16 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal for Vehicle Details -->
+    <div id="vehicle-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="vehicle-modal-content">
+          <!-- Vehicle details will be loaded here -->
+        </div>
+      </div>
+    </div>
 
     <script src="scripts/app.js"></script>
   </body>

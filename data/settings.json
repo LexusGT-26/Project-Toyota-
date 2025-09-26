@@ -1,0 +1,50 @@
+{
+  "userPreferences": {
+    "language": "en",
+    "timezone": "Asia/Manila",
+    "dateFormat": "MM/DD/YYYY",
+    "units": "metric",
+    "notifications": {
+      "email": true,
+      "sms": false,
+      "push": true
+    }
+  },
+  "fleetSettings": {
+    "maintenanceReminder": 1000,
+    "inspectionInterval": 30,
+    "fuelPrice": 55.5,
+    "serviceCenters": [
+      {
+        "id": 1,
+        "name": "Toyota Cubao",
+        "address": "Quezon City, Metro Manila",
+        "contact": "+632 8911 1811"
+      },
+      {
+        "id": 2,
+        "name": "Toyota Global City",
+        "address": "Taguig, Metro Manila",
+        "contact": "+632 8777 8888"
+      }
+    ]
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@toyota.com",
+      "role": "Administrator",
+      "lastLogin": "2025-01-15T08:30:00Z",
+      "permissions": ["read", "write", "delete", "admin"]
+    },
+    {
+      "id": 2,
+      "name": "Fleet Manager",
+      "email": "manager@toyota.com",
+      "role": "Manager",
+      "lastLogin": "2025-01-15T09:15:00Z",
+      "permissions": ["read", "write"]
+    }
+  ]
+}

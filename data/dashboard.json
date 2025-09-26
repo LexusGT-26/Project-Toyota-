@@ -1,0 +1,55 @@
+{
+  "overview": {
+    "totalVehicles": 25,
+    "activeVehicles": 18,
+    "inMaintenance": 4,
+    "outOfService": 3,
+    "totalMileage": 1250000,
+    "fuelConsumption": 12500,
+    "co2Saved": 25000
+  },
+  "recentActivity": [
+    {
+      "id": 1,
+      "vehicle": "Toyota Land Cruiser",
+      "type": "Service Completed",
+      "date": "2025-01-15",
+      "status": "completed",
+      "description": "Regular maintenance service"
+    },
+    {
+      "id": 2,
+      "vehicle": "Toyota Haice",
+      "type": "Inspection Required",
+      "date": "2025-01-14",
+      "status": "pending",
+      "description": "Brake system inspection needed"
+    },
+    {
+      "id": 3,
+      "vehicle": "Toyota Hilux",
+      "type": "Parts Replaced",
+      "date": "2025-01-13",
+      "status": "completed",
+      "description": "Tires and filters replaced"
+    }
+  ],
+  "alerts": [
+    {
+      "id": 1,
+      "vehicle": "Toyota Fortuner",
+      "type": "Critical",
+      "message": "Engine warning light activated",
+      "priority": "high",
+      "timestamp": "2025-01-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "vehicle": "Toyota Coaster",
+      "type": "Warning",
+      "message": "Low tire pressure detected",
+      "priority": "medium",
+      "timestamp": "2025-01-15T09:15:00Z"
+    }
+  ]
+}

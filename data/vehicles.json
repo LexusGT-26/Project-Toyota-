@@ -1,0 +1,61 @@
+{
+  "vehicles": [
+    {
+      "id": 1,
+      "name": "Toyota Land Cruiser",
+      "model": "LC300",
+      "year": 2024,
+      "vin": "JTMCY7AJ3M4123456",
+      "licensePlate": "ABC123",
+      "status": "OK",
+      "mileage": 15000,
+      "lastService": "2025-06-10",
+      "nextService": 5000,
+      "engineType": "V8",
+      "fuelType": "Diesel",
+      "fuelEfficiency": 8.5,
+      "location": "Toyota Cubao",
+      "gps": { "lat": 14.5995, "lng": 120.9842 },
+      "assignedDriver": "Juan Dela Cruz",
+      "image": "images/Toyota Land Cruiser.jpg",
+      "specifications": {
+        "horsepower": 409,
+        "torque": 650,
+        "transmission": "10-speed Automatic",
+        "seatingCapacity": 7
+      }
+    },
+    {
+      "id": 2,
+      "name": "Toyota Haice",
+      "model": "H200",
+      "year": 2025,
+      "vin": "JTDBU4EE7A3123456",
+      "licensePlate": "DEF456",
+      "status": "Alert",
+      "mileage": 32000,
+      "lastService": "2025-03-15",
+      "nextService": 2000,
+      "engineType": "Inline-4",
+      "fuelType": "Diesel",
+      "fuelEfficiency": 12.5,
+      "location": "Toyota Global City",
+      "gps": { "lat": 14.5533, "lng": 121.0443 },
+      "assignedDriver": "Maria Santos",
+      "image": "images/Toyota Haice.jpg",
+      "specifications": {
+        "horsepower": 136,
+        "torque": 300,
+        "transmission": "5-speed Manual",
+        "seatingCapacity": 15
+      }
+    }
+  ],
+  "categories": [
+    { "id": 1, "name": "SUV", "count": 8 },
+    { "id": 2, "name": "Commercial", "count": 6 },
+    { "id": 3, "name": "Sedan", "count": 5 },
+    { "id": 4, "name": "Hybrid", "count": 4 },
+    { "id": 5, "name": "Electric", "count": 2 }
+  ]
+}
